@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
-
-/**
- * Generated class for the NotesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NoteshomePage } from '../noteshome/noteshome';
+import { ServiceProvider } from '../../providers/service/service';
 
 @IonicPage()
 @Component({
@@ -16,16 +11,22 @@ import { RestProvider } from '../../providers/rest/rest';
 })
 export class NotesPage {
 
-  notes;// = [];
+  rootPage = NoteshomePage;
+
+  notes;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-  private rest: RestProvider) {
+    private rest: RestProvider,
+    public menuCtrl: MenuController,
+    private service: ServiceProvider) {
+    menuCtrl.enable(true);
     this.getNotes();
+    service.getProfile();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotesPage');
+    //console.log('ionViewDidLoad NotesPage');
   }
 
   getNotes() {

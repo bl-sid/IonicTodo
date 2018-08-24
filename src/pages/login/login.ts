@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
 import { RestProvider } from '../../providers/rest/rest';
 import { Storage } from '@ionic/storage';
@@ -17,8 +17,11 @@ export class LoginPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public rest: RestProvider,
-    public storage: Storage
+    public storage: Storage,
+    public menuCtrl: MenuController
   ) {
+
+    menuCtrl.enable(false);
 
       this.regForm = new FormGroup({
         email: new FormControl(''),

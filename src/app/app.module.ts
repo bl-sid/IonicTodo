@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { NotesPage } from '../pages/notes/notes';
 import { NoteComponent } from '../components/note/note';
+import { NoteshomePage } from '../pages/noteshome/noteshome';
+import { ServiceProvider } from '../providers/service/service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { NoteComponent } from '../components/note/note';
     HomePage,
     LoginPage,
     NotesPage,
-    NoteComponent
+    NoteComponent,
+    NoteshomePage
   ],
   imports: [
     BrowserModule,
@@ -37,13 +40,15 @@ import { NoteComponent } from '../components/note/note';
     MyApp,
     HomePage,
     LoginPage,
-    NotesPage
+    NotesPage,
+    NoteshomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    RestProvider,
+    ServiceProvider
   ]
 })
 export class AppModule {}

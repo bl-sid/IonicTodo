@@ -19,3 +19,16 @@
 *::-webkit-scrollbar {
   display: none;
 }
+
+.name-parent {
+  display: flex;
+  flex-direction: column;
+  background-color: #fb0;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.name-child {
+  flex: 1;
+  color: #fff;
+}

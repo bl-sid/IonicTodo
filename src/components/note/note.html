@@ -3,7 +3,7 @@
   <div class="item">{{note.body}}</div>
 </div> -->
 
-<ion-card>
+<ion-card [ngStyle]="{'background-color': note.color}">
   <img src="{{imageUrl}}" *ngFor="let imageUrl of note.imageUrls">
   <ion-card-content>
     <ion-card-title>

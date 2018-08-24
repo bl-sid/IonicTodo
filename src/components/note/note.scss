@@ -1,0 +1,12 @@
+.note {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    flex-basis: auto;
+}
+
+.title {
+    font-weight: 600;
+}

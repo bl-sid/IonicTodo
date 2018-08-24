@@ -1,0 +1,16 @@
+<!-- <div class="note">
+  <div class="item title">{{note.title}}</div>
+  <div class="item">{{note.body}}</div>
+</div> -->
+
+<ion-card>
+  <img src="{{imageUrl}}" *ngFor="let imageUrl of note.imageUrls">
+  <ion-card-content>
+    <ion-card-title>
+      {{note.title}}
+    </ion-card-title>
+    <p>
+      {{note.body | slice: 0:100}}
+    </p>
+  </ion-card-content>
+</ion-card>

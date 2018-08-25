@@ -27,21 +27,26 @@ export class LoginPage {
         email: new FormControl(''),
         password: new FormControl('')
       });
+
+      this.storage.get('token').then(res => {
+        console.log(res);
+        if (res !== null && res !== undefined) {
+          this.navCtrl.setRoot(NotesPage);
+        }
+       }).catch(res => {
+         console.log(res);
+       });
   }
 
   ionViewDidLoad() {
    // console.log('ionViewDidLoad LoginPage');
-   this.storage.get('token').then(res => {
-    console.log(res);
-    this.navCtrl.setRoot(NotesPage);
-   });
-   
   }
 
   login() {
     console.log(this.regForm.value);
     this.rest.login('oauth/token', this.regForm.value).subscribe(res => {
       this.storage.set('token', res['access_token']).then(res => {
+        this.rest.setToken();
         this.navCtrl.setRoot(NotesPage);
       });
     });

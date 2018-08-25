@@ -17,6 +17,8 @@ export class MyApp {
 
   user;
 
+  imgUrl;
+
   userSubscription: Subscription;
 
   constructor(platform: Platform, statusBar: StatusBar,
@@ -31,6 +33,7 @@ export class MyApp {
 
       this.userSubscription = service.userSubject.subscribe(res => {
         this.user = res;
+        this.imgUrl = 'url(' + this.user.profileUrl + ')';
       });
 
     });

@@ -10,9 +10,10 @@
 
         <div *ngIf="user" class="user">
             <div class="name-parent">
-                    <div class="name-child">{{user.firstname}} {{user.lastname}}</div>
-                    <div class="name-child">{{user.email}}</div>
+                <div class="name-child">{{user.firstname}} {{user.lastname}}</div>
+                <div class="name-child">{{user.email}}</div>
             </div>
+            <div class="prof" [ngStyle]="{'content':imgUrl}"></div>
         </div>
 
         <ion-list>
@@ -26,7 +27,7 @@
                 Archive
             </button>
             <button ion-item (click)="closeMenu()">
-                 Deleted
+                Deleted
             </button>
         </ion-list>
     </ion-content>

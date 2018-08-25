@@ -20,7 +20,18 @@
   display: none;
 }
 
+.user {
+  display: flex;
+}
+
+.prof {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
 .name-parent {
+  flex: 1;
   display: flex;
   flex-direction: column;
   background-color: #fb0;
